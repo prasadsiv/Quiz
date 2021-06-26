@@ -82,7 +82,14 @@ class _QuizePageState extends State<QuizePage> {
                 ),
               ),
               onPressed: () {
-                //The user picked true
+                setState(() {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
+                });
               },
             ),
           ),
@@ -102,7 +109,14 @@ class _QuizePageState extends State<QuizePage> {
                 ),
               ),
               onPressed: () {
-                //The user picked true
+                setState(() {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
+                });
               },
             ),
           ),
