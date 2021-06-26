@@ -31,20 +31,13 @@ class QuizePage extends StatefulWidget {
 }
 
 class _QuizePageState extends State<QuizePage> {
-  List<Icon> scoreKeeper = [
-    Icon(
-      Icons.check,
-      color: Colors.green,
-    ),
-    Icon(
-      Icons.close,
-      color: Colors.red,
-    ),
-    Icon(
-      Icons.close,
-      color: Colors.red,
-    )
+  List<Icon> scoreKeeper = [];
+  List<String> quesitons = [
+    'Some cats are actually allergic to humans',
+    'You can lead a cow down stairs but not up stairs.',
+    'Approximately one quarter of human bones are in the feet.',
   ];
+  int questionNumber = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -57,7 +50,7 @@ class _QuizePageState extends State<QuizePage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                "This is where the question text will go.",
+                quesitons[questionNumber],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -83,12 +76,7 @@ class _QuizePageState extends State<QuizePage> {
               ),
               onPressed: () {
                 setState(() {
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.check,
-                      color: Colors.green,
-                    ),
-                  );
+                  questionNumber++;
                 });
               },
             ),
@@ -110,12 +98,7 @@ class _QuizePageState extends State<QuizePage> {
               ),
               onPressed: () {
                 setState(() {
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.close,
-                      color: Colors.red,
-                    ),
-                  );
+                  questionNumber++;
                 });
               },
             ),
