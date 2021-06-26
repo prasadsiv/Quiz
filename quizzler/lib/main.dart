@@ -93,6 +93,22 @@ class _QuizePageState extends State<QuizePage> {
             ),
           ),
         ),
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.check,
+              color: Colors.green,
+            ),
+            Icon(
+              Icons.close,
+              color: Colors.red,
+            ),
+            Icon(
+              Icons.close,
+              color: Colors.red,
+            )
+          ],
+        )
       ],
     );
   }
